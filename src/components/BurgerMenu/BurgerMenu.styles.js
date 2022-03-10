@@ -52,7 +52,7 @@ export const SideBar = styled.div`
     top: 4.96rem;
     z-index: 99999;
     opacity: 0;
-    pointer-events: none;
+    /* pointer-events: none; */
     display: none;
 
     .sidebar {
@@ -99,12 +99,12 @@ export const Option = styled.div`
 export const OptionText = styled.p`
     padding: 1rem;
     height: 70px;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     text-align: left;
 `;
 
 export const HiddenMenuOption = styled.p`
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: grey;
     height: 50px;
     display: flex;

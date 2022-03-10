@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
     &.main {
         background-color: rgba(9, 11, 19, 0.95);
         position: sticky;
-        top: 0;
+        top: -1px;
         z-index: 99999;
     }
 `;
@@ -26,7 +26,7 @@ export const Logo = styled.h1`
     outline: none;
 
     @media screen and (max-width: 500px) {
-        font-size: 3rem;
+        font-size: 3.1rem;
     }
 `;
 

@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
     height: 40vmin;
     min-width: 70vmin;
     display: flex;
-    background: rgba(9, 6, 19, 0.5);
+    background: rgba(9, 11, 19, 0.5);
     border-radius: 10px;
     padding: 10px;
 `;

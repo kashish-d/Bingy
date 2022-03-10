@@ -53,6 +53,9 @@ export const Panel = styled.div`
         height: 60vh;
         max-height: unset;
     }
+    @media screen and (max-width: 500px) {
+        border-radius: 20px;
+    }
 `;
 
 export const SlideBtn = styled.div`

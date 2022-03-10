@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
     padding: 1rem;
     width: 100%;
-    background-color: rgba(9, 6, 19);
+    background-color: rgba(9, 11, 19);
     display: flex;
     justify-content: center;
     align-items: center;

@@ -32,7 +32,6 @@ export const Image = styled.img`
     box-shadow: 2px 2px 10px #000;
 
     &:hover {
-        border: 2px solid white;
         transform: scale(1.05);
     }
 
@@ -42,4 +41,11 @@ export const Image = styled.img`
         max-width: 150px;
         min-width: 130px;
     }
+`;
+
+export const ImageWrapper = styled.div`
+    border-radius: 10px;
+    height: fit-content;
+    width: fit-content;
+    overflow: hidden;
 `;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
     height: 100vh;
     width: 100vw;
-    background: rgba(0 0 0/0.9);
+    background: rgba(0 0 0/0.7);
     position: fixed;
     inset: 0;
     z-index: 99999;
@@ -18,11 +18,10 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-    /* border: 1px solid; */
     border-radius: 10px;
-    width: 98vmin;
+    width: 100vmin;
     padding: 1rem;
-    height: 70vmin;
+    height: 65vmin;
     display: flex;
     align-items: center;
     justify-content: center;
