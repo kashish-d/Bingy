@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
     letter-spacing: 5px;
 
     &.small {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 
     &:before {

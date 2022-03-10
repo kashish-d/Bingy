@@ -75,7 +75,7 @@ function Movie() {
                     })}
                 </Grid>
             ) : (
-                <div>Something went wrong</div>
+                ''
             )}
             {recommendedLoading && <Spinner />}
         </>

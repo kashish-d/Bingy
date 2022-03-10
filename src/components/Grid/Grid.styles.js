@@ -51,9 +51,6 @@ export const Content = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     grid-gap: 1rem 2rem;
     place-items: center;
-    &.bigSize {
-        grid-template-columns: repeat(auto-fill, 1fr);
-    }
     &.slidingAtAll {
         display: flex;
         overflow-x: scroll;

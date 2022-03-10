@@ -17,6 +17,7 @@ function TopRatedMovies() {
                 {toprated.results.map((movie) => {
                     return (
                         <Thumb
+                            clickable
                             key={movie.id}
                             movieId={movie.id}
                             image={

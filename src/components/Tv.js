@@ -95,7 +95,7 @@ function Tv() {
                     })}
                 </Grid>
             ) : (
-                <div>Something went wrong</div>
+                ''
             )}
             {recommendedLoading && <Spinner />}
         </>

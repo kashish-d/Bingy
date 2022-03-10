@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     min-width: 174px;
-    max-width: 240px;
+    max-width: 250px;
     min-height: 520px;
     h4 {
         font-size: 1.3rem;
@@ -25,7 +25,7 @@ export const Image = styled.img`
     height: 100%;
     max-height: 370px;
     min-height: 370px;
-    max-width: 230px;
+    max-width: 250px;
     object-fit: cover;
     border-radius: 10px;
     border: 1px solid transparent;

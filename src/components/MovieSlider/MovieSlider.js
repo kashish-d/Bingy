@@ -50,7 +50,7 @@ function MovieSlider() {
     let swipedir,
         startX,
         distX = 0,
-        threshold = 150,
+        threshold = 70,
         allowedTime = 400,
         elapsedTime,
         startTime;
