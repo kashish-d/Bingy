@@ -5,6 +5,7 @@ import Thumb from './Thumb/Thumb';
 import Button from './button/Button';
 import Spinner from './Spinner/Spinner';
 import Icon2 from '../images/video-camera.png';
+import GoToTop from './GoToTop/GoToTop';
 
 function PopularTv() {
     const {
@@ -44,6 +45,7 @@ function PopularTv() {
                     callback={() => setPopularTvLoadMore(true)}
                 ></Button>
             )}
+            <GoToTop />
         </>
     );
 }

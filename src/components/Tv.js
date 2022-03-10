@@ -13,6 +13,7 @@ import MoreIcon from '../images/clapperboard.png';
 import Thumb from './Thumb/Thumb';
 import SeasonCard from './SeasonCard/SeasonCard';
 import SeasonIcon from '../images/video-camera.png';
+import GoToTop from './GoToTop/GoToTop';
 
 function Tv() {
     const { tvId } = useParams();
@@ -41,24 +42,28 @@ function Tv() {
                     );
                 })}
             </Grid>
-            <Grid header={'Seasons'} slidingAtAll icon={SeasonIcon}>
-                {state.seasons.map((season) => {
-                    return (
-                        <SeasonCard
-                            key={season.id}
-                            imageUrl={
-                                season.poster_path
-                                    ? `${IMAGE_BASE_URL}${POSTER_SIZE}${season.poster_path}`
-                                    : NoImage
-                            }
-                            name={season.name}
-                            overview={season.overview}
-                            episodes={season.episode_count}
-                            airDate={season.air_date}
-                        />
-                    );
-                })}
-            </Grid>
+            {state.seasons.length > 0 ? (
+                <Grid header={'Seasons'} slidingAtAll icon={SeasonIcon}>
+                    {state.seasons.map((season) => {
+                        return (
+                            <SeasonCard
+                                key={season.id}
+                                imageUrl={
+                                    season.poster_path
+                                        ? `${IMAGE_BASE_URL}${POSTER_SIZE}${season.poster_path}`
+                                        : NoImage
+                                }
+                                name={season.name}
+                                overview={season.overview}
+                                episodes={season.episode_count}
+                                airDate={season.air_date}
+                            />
+                        );
+                    })}
+                </Grid>
+            ) : (
+                ''
+            )}
             <MediaSection videos={state.videos.results} />
             {!recommendedError && recommended.total_results > 0 ? (
                 <Grid header={'More like this'} icon={MoreIcon} slidingAtAll>
@@ -98,6 +103,7 @@ function Tv() {
                 ''
             )}
             {recommendedLoading && <Spinner />}
+            <GoToTop />
         </>
     );
 }

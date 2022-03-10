@@ -11,6 +11,7 @@ import MediaSection from './MediaSection/MediaSection';
 import { useRecomendationFetch } from '../hooks/useRecomendationFetch';
 import MoreIcon from '../images/clapperboard.png';
 import Thumb from './Thumb/Thumb';
+import GoToTop from './GoToTop/GoToTop';
 
 function Movie() {
     const { movieId } = useParams();
@@ -78,6 +79,7 @@ function Movie() {
                 ''
             )}
             {recommendedLoading && <Spinner />}
+            <GoToTop />
         </>
     );
 }

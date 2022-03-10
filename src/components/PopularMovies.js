@@ -5,6 +5,7 @@ import Thumb from './Thumb/Thumb';
 import Button from './button/Button';
 import Spinner from './Spinner/Spinner';
 import Icon1 from '../images/film-reel.png';
+import GoToTop from './GoToTop/GoToTop';
 
 function PopularMovies() {
     const { state, loading, error, setLoadMore } = usePopularFetch();
@@ -41,6 +42,7 @@ function PopularMovies() {
                     callback={() => setLoadMore(true)}
                 ></Button>
             )}
+            <GoToTop />
         </>
     );
 }

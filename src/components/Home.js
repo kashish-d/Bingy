@@ -14,6 +14,7 @@ import Icon2 from '../images/video-camera.png';
 import Icon3 from '../images/movie.png';
 import Icon4 from '../images/watching-a-movie.png';
 import Icon5 from '../images/clapperboard.png';
+import GoToTop from './GoToTop/GoToTop';
 
 function Home() {
     // Movies
@@ -164,6 +165,7 @@ function Home() {
                     ))}
             </Grid>
             {TopRatedLoading && <Spinner />}
+            <GoToTop />
         </>
     );
 }

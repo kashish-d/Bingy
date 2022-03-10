@@ -21,6 +21,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Image = styled.img`
+    display: block;
     width: 100%;
     height: 100%;
     max-height: 370px;
@@ -28,8 +29,6 @@ export const Image = styled.img`
     max-width: 250px;
     object-fit: cover;
     border-radius: 10px;
-    border: 1px solid transparent;
-    box-shadow: 2px 2px 10px #000;
 
     &:hover {
         transform: scale(1.05);
@@ -44,8 +43,8 @@ export const Image = styled.img`
 `;
 
 export const ImageWrapper = styled.div`
+    padding: 0;
+    box-shadow: 2px 2px 10px #000;
     border-radius: 10px;
-    height: fit-content;
-    width: fit-content;
     overflow: hidden;
 `;

@@ -5,6 +5,7 @@ import Thumb from './Thumb/Thumb';
 import Button from './button/Button';
 import Spinner from './Spinner/Spinner';
 import Icon5 from '../images/clapperboard.png';
+import GoToTop from './GoToTop/GoToTop';
 
 function TopRatedMovies() {
     const { toprated, TopRatedLoading, TopRatedError, setTopRatedLoadMore } =
@@ -42,6 +43,7 @@ function TopRatedMovies() {
                     callback={() => setTopRatedLoadMore(true)}
                 ></Button>
             )}
+            <GoToTop />
         </>
     );
 }

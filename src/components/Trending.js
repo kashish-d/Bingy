@@ -5,6 +5,7 @@ import Thumb from './Thumb/Thumb';
 import Button from './button/Button';
 import Spinner from './Spinner/Spinner';
 import TrendingIcon from '../images/trending-topic.png';
+import GoToTop from './GoToTop/GoToTop';
 
 function Trending() {
     const { Trending, TrendingLoading, TrendingError, setTrendingLoadMore } =
@@ -51,6 +52,7 @@ function Trending() {
                     callback={() => setTrendingLoadMore(true)}
                 ></Button>
             )}
+            <GoToTop />
         </>
     );
 }

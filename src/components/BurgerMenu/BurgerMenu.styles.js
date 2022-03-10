@@ -47,12 +47,12 @@ export const SideBar = styled.div`
     height: 100vh;
     width: 100vw;
     position: absolute;
-    background: linear-gradient(to right, rgba(0 0 0/0.4), rgba(0 0 0.4));
+    background: linear-gradient(to right, rgba(0 0 0/0.8), rgba(0 0 0.4));
     left: 0;
     top: 4.96rem;
     z-index: 99999;
     opacity: 0;
-    /* pointer-events: none; */
+    pointer-events: none;
     display: none;
 
     .sidebar {

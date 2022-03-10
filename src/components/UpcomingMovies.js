@@ -5,6 +5,7 @@ import Thumb from './Thumb/Thumb';
 import Button from './button/Button';
 import Spinner from './Spinner/Spinner';
 import Icon3 from '../images/movie.png';
+import GoToTop from './GoToTop/GoToTop';
 
 function UpcomingMovies() {
     const { upcoming, UpcomingLoading, UpcomingError, setUpcomingLoadMore } =
@@ -41,6 +42,7 @@ function UpcomingMovies() {
                     callback={() => setUpcomingLoadMore(true)}
                 ></Button>
             )}
+            <GoToTop />
         </>
     );
 }

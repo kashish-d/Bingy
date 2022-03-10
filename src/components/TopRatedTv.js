@@ -5,6 +5,7 @@ import Thumb from './Thumb/Thumb';
 import Button from './button/Button';
 import Spinner from './Spinner/Spinner';
 import Icon4 from '../images/watching-a-movie.png';
+import GoToTop from './GoToTop/GoToTop';
 
 function TopRatedTv() {
     const {
@@ -44,6 +45,7 @@ function TopRatedTv() {
                     callback={() => setTopRatedTvLoadMore(true)}
                 ></Button>
             )}
+            <GoToTop />
         </>
     );
 }
