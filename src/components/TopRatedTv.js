@@ -18,7 +18,7 @@ function TopRatedTv() {
     if (TopRatedTvError) return <div>Something went wrong..</div>;
     return (
         <>
-            <Grid header={'Popular Tv Series'} icon={Icon4}>
+            <Grid header={'Top Rated Tv Series'} icon={Icon4}>
                 {TopRatedTv.results.map((tv) => {
                     return (
                         <Thumb

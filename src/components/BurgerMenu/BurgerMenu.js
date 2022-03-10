@@ -35,7 +35,7 @@ function BurgerMenu() {
                 <Line className='line3'></Line>
             </Wrapper>
 
-            <SideBar className='sidebar-parent' onClick={HandleClick}>
+            <SideBar className='sidebar-parent'>
                 <div className='sidebar'>
                     <Option>
                         <OptionText onClick={() => LinkTo('/Trending')}>
