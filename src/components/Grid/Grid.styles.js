@@ -48,7 +48,7 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
     grid-gap: 1rem 2rem;
     place-items: center;
     &.slidingAtAll {
@@ -64,6 +64,7 @@ export const Content = styled.div`
     }
 
     @media screen and (max-width: 470px) {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         grid-gap: 1rem;
         &.sliding {
             display: flex;

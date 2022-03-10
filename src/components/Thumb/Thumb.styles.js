@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-    min-width: 174px;
+    min-width: 230px;
     max-width: 250px;
     min-height: 520px;
     h4 {
@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
         overflow-y: auto;
     }
     @media screen and (max-width: 470px) {
-        min-width: 120px;
+        min-width: 150px;
         max-width: 150px;
         min-height: 400px;
         h4 {
