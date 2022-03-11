@@ -47,7 +47,7 @@ export const SideBar = styled.div`
     height: 100vh;
     width: 100vw;
     position: absolute;
-    background: linear-gradient(to right, rgba(0 0 0/0.8), rgba(0 0 0.4));
+    background: linear-gradient(to right, rgba(0 0 0/0.3), rgba(0 0 0.3));
     left: 0;
     top: 4.96rem;
     z-index: 99999;

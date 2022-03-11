@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { isPersistedState } from '../helpers';
 import API from '../API';
 
 const initialState = {
@@ -38,8 +39,22 @@ export function useTvFetch(tvId) {
                 setError(true);
             }
         }
+        // const sessionState = isPersistedState(`Tv${tvId}`);
+
+        // if (sessionState) {
+        //     console.log('Grabbing from session Storage,tv');
+        //     setState(sessionState);
+        //     setLoading(false);
+        //     return;
+        // }
+
         fetchTv();
     }, [tvId]);
+
+    // // Write to sessionStorage
+    // useEffect(() => {
+    //     sessionStorage.setItem(`Tv${tvId}`, JSON.stringify(state));
+    // }, [tvId, state]);
 
     return { state, loading, error };
 }

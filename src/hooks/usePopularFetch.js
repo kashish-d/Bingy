@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { isPersistedState } from '../helpers';
 import API from '../API';
 
 const initialState = {
@@ -7,6 +8,8 @@ const initialState = {
     total_pages: 0,
     total_results: 0,
 };
+
+// helpers
 
 export const usePopularFetch = () => {
     const [state, setState] = useState(initialState);
@@ -36,8 +39,15 @@ export const usePopularFetch = () => {
         setLoading(false);
     }
 
-    // Initial and Search
+    // Initial
     useEffect(() => {
+        const sessionState = isPersistedState('PopularState');
+
+        if (sessionState) {
+            setState(sessionState);
+            return;
+        }
+        console.log('Grabbing from Api, Popular');
         setState(initialState);
         fetchPopularMovies(1);
     }, []);
@@ -48,6 +58,11 @@ export const usePopularFetch = () => {
         fetchPopularMovies(state.page + 1);
         setLoadMore(false);
     }, [loadMore, state]);
+
+    // Writing in session storage
+    useEffect(() => {
+        sessionStorage.setItem('PopularState', JSON.stringify(state));
+    }, [state]);
 
     return {
         state,

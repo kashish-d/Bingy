@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { isPersistedState } from '../helpers';
 import API from '../API';
 
 const initialState = {
@@ -37,6 +38,12 @@ export const useTrendingFetch = () => {
 
     // Initial and Search
     useEffect(() => {
+        const sessionState = isPersistedState('TrendingState');
+
+        if (sessionState) {
+            setTrending(sessionState);
+            return;
+        }
         setTrending(initialState);
         fetchTrending(1);
     }, []);
@@ -47,6 +54,11 @@ export const useTrendingFetch = () => {
         fetchTrending(Trending.page + 1);
         setTrendingLoadMore(false);
     }, [TrendingLoadMore, Trending]);
+
+    // Write to session storage
+    useEffect(() => {
+        sessionStorage.setItem('TrendingState', JSON.stringify(Trending));
+    }, [Trending]);
 
     return {
         Trending,

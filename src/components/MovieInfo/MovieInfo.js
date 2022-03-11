@@ -48,7 +48,11 @@ function MovieInfo({ state, mediaType }) {
                 <p className='dates'>
                     {mediaType === 'movie'
                         ? `Release: ${state.release_date}`
-                        : `Airing: ${state.first_air_date} - ${state.last_air_date}`}
+                        : `Airing: ${state.first_air_date} - ${
+                              state.last_air_date
+                                  ? state.last_air_date
+                                  : 'Ongoing'
+                          }`}
                 </p>
                 <StarRating small rating={(state.vote_average / 10) * 5} />
 

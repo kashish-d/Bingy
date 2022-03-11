@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { isPersistedState } from '../helpers';
 import API from '../API';
 
 const initialState = {
@@ -36,8 +37,14 @@ export const useTopRatedFetch = () => {
         setTopRatedLoading(false);
     }
 
-    // Initial and Search
+    // Initial
     useEffect(() => {
+        const sessionState = isPersistedState('TopRatedState');
+
+        if (sessionState) {
+            setToprated(sessionState);
+            return;
+        }
         setToprated(initialState);
         fetchTopRatedMovies();
     }, []);
@@ -48,6 +55,11 @@ export const useTopRatedFetch = () => {
         fetchTopRatedMovies(toprated.page + 1);
         setTopRatedLoadMore(false);
     }, [toprated, TopRatedLoadMore]);
+
+    // Write to session storage
+    useEffect(() => {
+        sessionStorage.setItem('TopRatedState', JSON.stringify(toprated));
+    }, [toprated]);
 
     return {
         toprated,

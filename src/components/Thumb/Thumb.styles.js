@@ -47,4 +47,12 @@ export const ImageWrapper = styled.div`
     box-shadow: 2px 2px 10px #000;
     border-radius: 10px;
     overflow: hidden;
+    /* opacity: 0; */
+    /* animation: show 0.1s forwards; */
+
+    @keyframes show {
+        to {
+            opacity: 1;
+        }
+    }
 `;

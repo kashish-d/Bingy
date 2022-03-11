@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { isPersistedState } from '../helpers';
 import API from '../API';
 
 const initialState = {
@@ -36,8 +37,14 @@ export const usePopulartvFetch = () => {
         setPopularTvLoading(false);
     }
 
-    // Initial and Search
+    // Initial
     useEffect(() => {
+        const sessionState = isPersistedState('PopularTvState');
+
+        if (sessionState) {
+            setPopulerTv(sessionState);
+            return;
+        }
         setPopulerTv(initialState);
         fetchPopularTv(1);
     }, []);
@@ -48,6 +55,11 @@ export const usePopulartvFetch = () => {
         fetchPopularTv(popularTv.page + 1);
         setPopularTvLoadMore(false);
     }, [popularTvLoadMore, popularTv]);
+
+    // Write to session storage
+    useEffect(() => {
+        sessionStorage.setItem('PopularTvState', JSON.stringify(popularTv));
+    }, [popularTv]);
 
     return {
         popularTv,

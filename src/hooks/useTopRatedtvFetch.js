@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { isPersistedState } from '../helpers';
 import API from '../API';
 
 const initialState = {
@@ -9,7 +10,7 @@ const initialState = {
 };
 
 export const useTopRatedtvFetch = () => {
-    const [TopRatedTv, setPopulerTv] = useState(initialState);
+    const [TopRatedTv, setTopRatedTv] = useState(initialState);
     const [TopRatedTvLoading, setTopRatedTvLoading] = useState(false);
     const [TopRatedTvLoadMore, setTopRatedTvLoadMore] = useState(false);
     const [TopRatedTvError, setTopRatedTvError] = useState(false);
@@ -21,7 +22,7 @@ export const useTopRatedtvFetch = () => {
 
             const movies = await API.fetchTopRatedTv(page);
 
-            setPopulerTv((prev) => {
+            setTopRatedTv((prev) => {
                 return {
                     ...movies,
                     results:
@@ -38,7 +39,13 @@ export const useTopRatedtvFetch = () => {
 
     // Initial and Search
     useEffect(() => {
-        setPopulerTv(initialState);
+        const sessionState = isPersistedState('TopRatedTvState');
+
+        if (sessionState) {
+            setTopRatedTv(sessionState);
+            return;
+        }
+        setTopRatedTv(initialState);
         fetchTopRatedTv(1);
     }, []);
 
@@ -48,6 +55,11 @@ export const useTopRatedtvFetch = () => {
         fetchTopRatedTv(TopRatedTv.page + 1);
         setTopRatedTvLoadMore(false);
     }, [TopRatedTvLoadMore, TopRatedTv]);
+
+    // Write to session storage
+    useEffect(() => {
+        sessionStorage.setItem('TopRatedTvState', JSON.stringify(TopRatedTv));
+    }, [TopRatedTv]);
 
     return {
         TopRatedTv,

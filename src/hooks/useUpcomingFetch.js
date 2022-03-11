@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { isPersistedState } from '../helpers';
 import API from '../API';
 
 const initialState = {
@@ -38,6 +39,12 @@ export const useUpcomingFetch = () => {
 
     // Initial
     useEffect(() => {
+        const sessionState = isPersistedState('UpcomingState');
+
+        if (sessionState) {
+            setUpcoming(sessionState);
+            return;
+        }
         setUpcoming(initialState);
         fetchUpcomingMovies(1);
     }, []);
@@ -48,6 +55,11 @@ export const useUpcomingFetch = () => {
         fetchUpcomingMovies(upcoming.page + 1);
         setUpcomingLoadMore(false);
     }, [upcoming, UpcomingLoadMore]);
+
+    // Writing in session storage
+    useEffect(() => {
+        sessionStorage.setItem('UpcomingState', JSON.stringify(upcoming));
+    }, [upcoming]);
 
     return {
         upcoming,
