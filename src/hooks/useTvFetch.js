@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { isPersistedState } from '../helpers';
+// import { isPersistedState } from '../helpers';
 import API from '../API';
 
 const initialState = {
